@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
-import ServerUtils from "../utils/server-utils";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { useTheme } from "@/components/ThemeProvider";
 
 export default function ClientComponent() {
-  const result = ServerUtils();
-  console.log("server route rendered");
-  return (
-    <>
-      <h1>Client Route Page</h1>
-      <p>{result}</p>
-    </>
-  );
+  const theme = useTheme();
+  const settings = {
+    dots: true,
+  };
+  return <h1 style={{ color: theme.colors.primary }}>Client Route</h1>;
 }
